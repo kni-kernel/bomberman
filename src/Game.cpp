@@ -1,14 +1,13 @@
 #include "Game.h"
 
-Game::Game(int argc, char **argv)
-        :_argc(argc), _argv(argv)
+Game::Game()
 {
-    QApplication app(_argc, _argv);         //must be constructed before QWidget (mainWindow) is created
-
     mainWindow = new Window;
     mainWindow->show();
+}
 
-    gameLoop();
+Game::~Game() {
+    delete mainWindow;
 }
 
 void Game::gameLoop()

@@ -8,11 +8,6 @@ class Window : public QMainWindow
 {
 //    Q_OBJECT      //i don't know if it should be used here
 
-    //objects for printing "Hello Qt world" in the middle of the window
-    QWidget *centralWidget{};
-    QVBoxLayout *verticalLayout{};
-    QLabel *label{};
-
 public:
 
     void setupUi();                             //setups ui main window
@@ -20,9 +15,16 @@ public:
     void closeEvent(QCloseEvent *) override;    //override for game loop to end when main window is closed
 
     explicit Window(QWidget *parent = nullptr);
-    ~Window() override = default;
+    ~Window() override;
 
     bool windowOpened;
+
+private:
+
+    //objects for printing "Hello Qt world" in the middle of the window
+    QWidget *centralWidget;
+    QVBoxLayout *verticalLayout;
+    QLabel *label;
 
 };
 

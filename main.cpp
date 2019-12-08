@@ -2,5 +2,7 @@
 
 int main (int argc, char *argv[])
 {
-    Game game(argc, argv);
+    QApplication app(argc, argv);         //must be constructed before QWidget (mainWindow) is created
+    Game game;
+    game.gameLoop();
 }

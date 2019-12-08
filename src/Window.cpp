@@ -3,9 +3,19 @@
 Window::Window(QWidget *parent) :
     QMainWindow(parent)
 {
+    centralWidget = nullptr;
+    verticalLayout = nullptr;
+    label = nullptr;
     windowOpened = true;
     setupUi();
     addTestLabel();
+}
+
+Window::~Window()
+{
+    delete label;
+    delete verticalLayout;
+    delete centralWidget;
 }
 
 void Window::setupUi()
@@ -33,6 +43,7 @@ void Window::addTestLabel()
     label->setAlignment(Qt::AlignCenter);
 }
 
-void Window::closeEvent(QCloseEvent *) {
+void Window::closeEvent(QCloseEvent *)
+{
     windowOpened = false;
 }

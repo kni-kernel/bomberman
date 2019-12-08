@@ -4,17 +4,15 @@
 #include "Window.h"
 
 class Game {
-
 public:
 
-    Game(int , char **);
+    Game();
+    ~Game();
 
-    void gameLoop();
+    void gameLoop();            //main event loop
 
 private:
 
-    int _argc;
-    char **_argv;
     Window *mainWindow;
 
 };
