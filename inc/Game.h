@@ -2,6 +2,7 @@
 #define BOMBERMAN_GAME_H
 
 #include "Window.h"
+#include "Object.h"
 
 class Game {
 public:
@@ -10,7 +11,6 @@ public:
     ~Game();
 
     void gameLoop();            //main event loop
-
 private:
 
     Window *mainWindow;

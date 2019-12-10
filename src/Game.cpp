@@ -1,5 +1,6 @@
 #include "Game.h"
 
+
 Game::Game()
 {
     mainWindow = new Window;
@@ -12,9 +13,14 @@ Game::~Game() {
 
 void Game::gameLoop()
 {
+    std::vector<Object*> elements;
     while(mainWindow->windowOpened)
     {
-        //things to do
+        for (int i = 0; i < elements.size(); i++)
+        {
+            elements[i]->update();
+            elements[i]->draw();
+        }
 
         QCoreApplication::processEvents();
     }
