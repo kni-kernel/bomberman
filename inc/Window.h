@@ -6,7 +6,7 @@
 
 class Window : public QMainWindow
 {
-//    Q_OBJECT      //i don't know if it should be used here
+    //Q_OBJECT      //i don't know if it should be used here
 
 public:
 

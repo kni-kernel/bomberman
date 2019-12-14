@@ -2,7 +2,7 @@
 #define BOMBERMAN_GAME_H
 
 #include "Window.h"
-
+#include "Object.h"
 class Game {
 public:
 
