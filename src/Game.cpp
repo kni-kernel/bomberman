@@ -1,4 +1,9 @@
 #include "Game.h"
+#include "Object.h"
+#include "Block.h"
+#include "UnDestroyableBlock.h"
+#include <utility>
+
 
 Game::Game()
 {
@@ -13,7 +18,12 @@ Game::~Game() {
 void Game::gameLoop()
 {
 	std::vector<Object*> elements;
-    while(mainWindow->windowOpened)
+	/*
+	UnDestroyableBlock* wall = new UnDestroyableBlock(std::pair <double, double> (1.0,0.0),"nazwa");
+	elements.push_back(wall);
+	*/
+    
+	while(mainWindow->windowOpened)
     {
 		for (Object* element : elements)
 		{

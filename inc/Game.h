@@ -3,6 +3,9 @@
 
 #include "Window.h"
 #include "Object.h"
+#include "Block.h"
+#include "UnDestroyableBlock.h"
+
 class Game {
 public:
 

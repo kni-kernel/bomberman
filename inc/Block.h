@@ -12,9 +12,7 @@ public:
 	//~Block() = default;
 	virtual void draw() = 0;
 	virtual void update() = 0;
-protected:
-	std::pair<double, double> _position;
-	std::string _asset;
+
 };
 
 #endif //BLOCK_H

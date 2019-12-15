@@ -10,11 +10,10 @@ class UnDestroyableBlock : public Block
 public:
 	UnDestroyableBlock(std::pair<double, double>, std::string);
 	//~UnDestroyableBlock() = default;
-	virtual void draw() = 0;
-	virtual void update() = 0;
+	virtual void draw();
+	virtual void update();
 protected:
-	std::pair<double, double> _position;
-	std::string _asset;
+
 	bool _destroyable = false;
 	bool _visible = true;
 };
