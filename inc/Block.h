@@ -1,13 +1,15 @@
-#ifndef OBJECT_H
-#define OBJECT_H
+#ifndef BLOCK_H
+#define BLOCK_H
 
+#include"Object.h"
 #include <iostream>
 #include <utility>   
 
-class Object
+class Block : public Object
 {
 public:
-	Object(std::pair<double, double>, std::string);
+	Block(std::pair<double,double>, std::string);
+	//~Block() = default;
 	virtual void draw() = 0;
 	virtual void update() = 0;
 protected:
@@ -15,4 +17,4 @@ protected:
 	std::string _asset;
 };
 
-#endif //OBJECT_H
+#endif //BLOCK_H

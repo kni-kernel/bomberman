@@ -15,12 +15,11 @@ void Game::gameLoop()
 	std::vector<Object*> elements;
     while(mainWindow->windowOpened)
     {
-		for (int i = 0; i < elements.size(); i++)
+		for (Object* element : elements)
 		{
-			elements[i]->update();
-			elements[i]->draw();
+			element->update();
+			element->draw();
 		}
-
 
         QCoreApplication::processEvents();
     }
