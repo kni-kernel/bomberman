@@ -2,7 +2,7 @@ include_directories(${Bomberman_SOURCE_DIR}/inc)
 
 find_package(Qt5 REQUIRED COMPONENTS Core Widgets Gui)
 
-set(PROJECT_SOURCES ../main.cpp Window.cpp Game.cpp Object.cpp)
+set(PROJECT_SOURCES ../main.cpp Window.cpp Game.cpp Object.cpp Bomb.cpp)
 
 #set(PROJECT_HEADERS_WITH_Q_OBJECT ../inc/Window.h)                          #for Qt to process classes with Q_OBJECT macro
 #qt5_wrap_cpp(PROJECT_SOURCES_MOC ${PROJECT_HEADERS_WITH_Q_OBJECT})
