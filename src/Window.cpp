@@ -1,49 +1,32 @@
 #include "Window.h"
 
-Window::Window(QWidget *parent) :
-    QMainWindow(parent)
-{
-    centralWidget = nullptr;
-    verticalLayout = nullptr;
-    label = nullptr;
-    windowOpened = true;
-    setupUi();
-    addTestLabel();
-}
+namespace Bomberman {
 
-Window::~Window()
-{
-    delete label;
-    delete verticalLayout;
-    delete centralWidget;
-}
+    Window::Window(int newWidth, int newHeight, QString newWindowTitle, QWidget *parent) :
+        QMainWindow{parent},
+        m_WindowOpened{true},
+        m_WindowWidth{newWidth},
+        m_WindowHeight{newHeight},
+        m_WindowTitle{std::move(newWindowTitle)}
+    {
+        setupUi();
+    }
 
-void Window::setupUi()
-{
-    if (objectName().isEmpty())
-        setObjectName("Window");
-    resize(640, 480);
-    setWindowTitle(tr("Bomberman Game"));
-}
+    Window::~Window() = default;
 
-void Window::addTestLabel()
-{
-    centralWidget = new QWidget(this);                  //documentation says central widget is necessary even if it's just a placeholder
-    centralWidget->setObjectName("centralWidget");
-    setCentralWidget(centralWidget);
+    void Window::setupUi() {
+        if (objectName().isEmpty())
+            setObjectName("Window");
+        resize(m_WindowWidth, m_WindowHeight);
+        setWindowTitle(tr(qPrintable(m_WindowTitle)));
+    }
 
-    verticalLayout = new QVBoxLayout(centralWidget);    //layout which keeps widget nicely centered when resizing window
-    verticalLayout->setObjectName("verticalLayout");
+    void Window::closeEvent(QCloseEvent *) {
+        m_WindowOpened = false;
+    }
 
-    label = new QLabel(centralWidget);                  //dummy test label with "Hello Qt World!"
-    label->setObjectName("label");
-    label->setText(tr("Hello Qt World!"));
+    bool Window::isWindowOpened() const {
+        return m_WindowOpened;
+    }
 
-    verticalLayout->addWidget(label);                           //places label in a layout
-    label->setAlignment(Qt::AlignCenter);
-}
-
-void Window::closeEvent(QCloseEvent *)
-{
-    windowOpened = false;
 }

@@ -1,31 +1,29 @@
-#ifndef MAINWINDOW_H
-#define MAINWINDOW_H
+#pragma once
 
-#include <QMainWindow>
 #include <QtWidgets>
 
-class Window : public QMainWindow
-{
-//    Q_OBJECT      //i don't know if it should be used here
+namespace Bomberman {
 
-public:
+    class Window : public QMainWindow {
 
-    void setupUi();                             //setups ui main window
-    void addTestLabel();                        //prints "Hello Qt world" in the middle of a window
-    void closeEvent(QCloseEvent *) override;    //override for game loop to end when main window is closed
+    public:
 
-    explicit Window(QWidget *parent = nullptr);
-    ~Window() override;
+        void setupUi();
+        void closeEvent(QCloseEvent *) override;
 
-    bool windowOpened;
+        explicit Window( int newWidth,int newHeight, QString newWindowTitle, QWidget *parent = nullptr);
 
-private:
+        ~Window() override;
 
-    //objects for printing "Hello Qt world" in the middle of the window
-    QWidget *centralWidget;
-    QVBoxLayout *verticalLayout;
-    QLabel *label;
+        bool isWindowOpened() const;
 
-};
+    private:
 
-#endif // MAINWINDOW_H
+        bool m_WindowOpened;
+        int m_WindowHeight;
+        int m_WindowWidth;
+        QString m_WindowTitle;
+
+    };
+
+}

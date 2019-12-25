@@ -1,27 +1,27 @@
 #include "Game.h"
+#include "Window.h"
 
+namespace Bomberman {
 
-Game::Game()
-{
-    mainWindow = new Window;
-    mainWindow->show();
-}
-
-Game::~Game() {
-    delete mainWindow;
-}
-
-void Game::gameLoop()
-{
-    std::vector<Object*> elements;
-    while(mainWindow->windowOpened)
+    Game::Game() :
+        m_MainWindow{new Window(640, 480, "Bomberman Game")}
     {
-        for (int i = 0; i < elements.size(); i++)
-        {
-            elements[i]->update();
-            elements[i]->draw();
+        if(m_MainWindow)
+            m_MainWindow->show();
+        else {
+            qInfo() << "Cannot open the main window, exiting.";
+            exit(EXIT_FAILURE);
         }
-
-        QCoreApplication::processEvents();
     }
+
+    Game::~Game() {
+        delete m_MainWindow;
+    }
+
+    void Game::gameLoop() {
+        while (m_MainWindow->isWindowOpened()) {
+            QCoreApplication::processEvents();
+        }
+    }
+
 }
