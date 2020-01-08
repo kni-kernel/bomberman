@@ -1,18 +1,17 @@
-#ifndef OBJECT_H
-#define OBJECT_H
+#pragma once
 
 #include <iostream>
-#include <utility>   
+#include <utility>
+#include <QtWidgets/QGraphicsPixmapItem>
 
-class Object
+class Object : public QGraphicsPixmapItem
 {
 public:
-	Object(std::pair<double, double>, std::string);
+	Object(const std::pair<double, double> &, const std::string &);
+    virtual ~Object() = default;
 	virtual void draw() = 0;
 	virtual void update() = 0;
 protected:
 	std::pair<double, double> _position;
 	std::string _asset;
 };
-
-#endif //OBJECT_H
