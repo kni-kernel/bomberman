@@ -1,5 +1,0 @@
-D:/od26.06'19/obiektowe 2k19/bomberman/out/build/x64-Debug/CMakeFiles/edit_cache.dir
-D:/od26.06'19/obiektowe 2k19/bomberman/out/build/x64-Debug/CMakeFiles/rebuild_cache.dir
-D:/od26.06'19/obiektowe 2k19/bomberman/out/build/x64-Debug/src/CMakeFiles/Bomberman.dir
-D:/od26.06'19/obiektowe 2k19/bomberman/out/build/x64-Debug/src/CMakeFiles/edit_cache.dir
-D:/od26.06'19/obiektowe 2k19/bomberman/out/build/x64-Debug/src/CMakeFiles/rebuild_cache.dir
