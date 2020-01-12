@@ -1,11 +1,11 @@
 ﻿################################################################################
 # Ten plik .gitignore został utworzony automatycznie przez Microsoft(R) Visual Studio.
 ################################################################################
-/cmake-build-debug
-/out
-/.idea
+cmake-build-debug
+out
+.idea
 /.vs
-/out/build/x64-Debug/Testing/Temporary
+out
 CMakeSettings.json
 
 
