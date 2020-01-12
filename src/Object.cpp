@@ -1,7 +1,10 @@
 #include "Object.h"
-
-Object :: Object(std::vector<double> position= std::vector<double>(2,0), std::string asset="Default_asset")
-{
-    _position = position;
-    _asset = asset;
+namespace Bomberman {
+    Object::Object(const std::pair<int, int> &position, const std::string &asset, Game *game,
+                   QGraphicsPixmapItem *parent) :
+            m_position(position),
+            m_asset(asset),
+            m_Game(game),
+            QGraphicsPixmapItem(parent) {
+    }
 }

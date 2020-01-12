@@ -1,18 +1,26 @@
-#ifndef OBJECT_H
-#define OBJECT_H
+#pragma once
 
 #include <iostream>
-#include <vector>
+#include <utility>
+#include <QtWidgets/QGraphicsPixmapItem>
 
-class Object
-{
-public:
-    Object(std::vector<double>, std::string);
-    virtual void draw() = 0;
-    virtual void update() = 0;
-protected:
-    std::vector <double> _position;
-    std::string _asset;
-};
+namespace Bomberman {
+    class Game;
 
-#endif //OBJECT_H
+    class Object : public QGraphicsPixmapItem {
+    public:
+        Object(const std::pair<int, int> &, const std::string &, Game *, QGraphicsPixmapItem *);
+
+        virtual ~Object() = default;
+
+        virtual void draw() = 0;
+
+        virtual void update() = 0;
+
+    protected:
+        std::pair<int, int> m_position;
+        std::string m_asset;
+        Game *m_Game;
+    };
+
+}
