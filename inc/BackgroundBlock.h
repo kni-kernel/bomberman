@@ -1,22 +1,22 @@
-#ifndef BACKGROUNDBLOCK_H
-#define BACKGROUNDBLOCK_H
+#pragma once
 
 #include"Block.h"
 #include <iostream>
 #include <utility> 
 
-class BackgroundBlock : public Block
-{
-public:
-	BackgroundBlock(std::pair<double, double>, std::string);
-	//~BackgroundBlock() = default; 
-	virtual void draw() = 0;
-	virtual void update() = 0;
+namespace Bomberman {
+    class BackgroundBlock : public Block {
+    public:
+        BackgroundBlock(std::pair<double, double>, std::string);
 
-protected:
+        //~BackgroundBlock() = default;
+        virtual void draw();
 
-	bool _destroyable = false;
-	bool _visible = true;
-};
+        virtual void update() = 0;
 
-#endif //BACKGROUND_H
+    protected:
+
+        bool _destroyable = false;
+        bool _visible = true;
+    };
+}

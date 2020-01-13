@@ -3,6 +3,9 @@
 int main (int argc, char *argv[])
 {
     QApplication app(argc, argv);         //must be constructed before QWidget (mainWindow) is created
-    Game game;
-    game.gameLoop();
+    //Game game;
+    //game.gameLoop();
+    auto game = new Bomberman::Game;
+    game->gameLoop();
+    delete game;
 }

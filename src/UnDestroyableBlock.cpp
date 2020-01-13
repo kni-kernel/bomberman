@@ -1,13 +1,14 @@
 #include "UnDestroyableBlock.h"
 
-UnDestroyableBlock::UnDestroyableBlock(std::pair<double, double>  position = std::pair<double, double> (1,0), std::string asset = "Blue" ) : Block(position, asset)
-{}
+namespace Bomberman {
+    UnDestroyableBlock::UnDestroyableBlock(std::pair<double, double> position = std::pair<double, double>(1, 0),
+                                           std::string asset = "Blue") : Block(position, asset) {}
 
-void UnDestroyableBlock::draw()
-{
-	
-}
-void UnDestroyableBlock::update()
-{
+    void UnDestroyableBlock::draw() {
 
+    }
+
+    void UnDestroyableBlock::update() {
+
+    }
 }

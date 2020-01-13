@@ -1,24 +1,23 @@
-#ifndef BOMBERMAN_GAME_H
-#define BOMBERMAN_GAME_H
+#pragma once
 
 #include "Window.h"
 #include "Object.h"
 #include "Block.h"
 #include "UnDestroyableBlock.h"
 
-class Game {
-public:
+namespace Bomberman {
+    class Game {
+    public:
 
-    Game();
-    ~Game();
+        Game();
 
-    void gameLoop();            //main event loop
+        ~Game();
 
-private:
+        void gameLoop();            //main event loop
 
-    Window *mainWindow;
+    private:
 
-};
+        Window *mainWindow;
 
-
-#endif //BOMBERMAN_GAME_H
+    };
+}

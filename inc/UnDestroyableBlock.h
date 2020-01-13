@@ -1,21 +1,22 @@
-#ifndef UNDESTROYABLEBLOCK_H
-#define UNDESTROYABLEBLOCK_H
+#pragma once
 
 #include"Block.h"
 #include <iostream>
 #include <utility> 
 
-class UnDestroyableBlock : public Block
-{
-public:
-	UnDestroyableBlock(std::pair<double, double>, std::string);
-	//~UnDestroyableBlock() = default;
-	virtual void draw();
-	virtual void update();
-protected:
+namespace Bomberman {
+    class UnDestroyableBlock : public Block {
+    public:
+        UnDestroyableBlock(std::pair<double, double>, std::string);
 
-	bool _destroyable = false;
-	bool _visible = true;
-};
+        //~UnDestroyableBlock() = default;
+        virtual void draw();
 
-#endif //UNDESTROYABLEBLOCK_H
+        virtual void update();
+
+    protected:
+
+        bool _destroyable = false;
+        bool _visible = true;
+    };
+}

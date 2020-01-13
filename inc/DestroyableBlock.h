@@ -1,22 +1,22 @@
-#ifndef DESTROYABLEBLOCK_H
-#define DESTROYABLEBLOCK_H
+#pragma once
 
 #include"Block.h"
 #include <iostream>
 #include <utility> 
 
-class DestroyableBlock : public Block
-{
-public:
-	DestroyableBlock(std::pair<double, double>, std::string);
-	//~DestroyableBlock() = default; 
-	virtual void draw() = 0;
-	virtual void update() = 0;
+namespace Bomberman {
+    class DestroyableBlock : public Block {
+    public:
+        DestroyableBlock(std::pair<double, double>, std::string);
 
-protected:
+        //~DestroyableBlock() = default;
+        virtual void draw() = 0;
 
-	bool _destroyable = true;
-	bool _visible = true;
-};
+        virtual void update() = 0;
 
-#endif //DESTROYABLEBLOCK_H
+    protected:
+
+        bool _destroyable = true;
+        bool _visible = true;
+    };
+}
