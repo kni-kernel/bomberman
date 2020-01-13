@@ -1,13 +1,13 @@
 #pragma once
 
-#include"Block.h"
 #include <iostream>
-#include <utility> 
+#include <utility>
+#include"Block.h"
 
 namespace Bomberman {
     class BackgroundBlock : public Block {
     public:
-        BackgroundBlock(std::pair<double, double>, std::string);
+        BackgroundBlock(std::pair<double, double>, std::string, Game*, QGraphicsPixmapItem*);
 
         //~BackgroundBlock() = default;
         virtual void draw();

@@ -13,11 +13,13 @@ namespace Bomberman {
 
         ~Game();
 
-        void gameLoop();            //main event loop
+        void gameLoop(); //main event loop
+        QGraphicsScene* getScene();
 
     private:
 
         Window *mainWindow;
+        QGraphicsScene *m_Scene;
 
     };
 }

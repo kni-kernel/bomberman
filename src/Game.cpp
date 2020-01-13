@@ -32,4 +32,8 @@ namespace Bomberman {
             QCoreApplication::processEvents();
         }
     }
+
+    QGraphicsScene* Game::getScene() {
+        return m_Scene;
+    }
 }

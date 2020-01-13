@@ -7,7 +7,7 @@
 namespace Bomberman {
     class UnDestroyableBlock : public Block {
     public:
-        UnDestroyableBlock(std::pair<double, double>, std::string);
+        UnDestroyableBlock(std::pair<double, double>, std::string, Game*, QGraphicsPixmapItem*);
 
         //~UnDestroyableBlock() = default;
         virtual void draw();

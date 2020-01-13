@@ -1,13 +1,18 @@
 #include <QGraphicsRectItem>
 #include "BackgroundBlock.h"
+#include "Game.h"
 
 namespace Bomberman {
-    BackgroundBlock::BackgroundBlock(std::pair<double, double> position, std::string asset) : Block(position, asset) {
+    BackgroundBlock::BackgroundBlock(std::pair<double, double> position, std::string asset, Game* game, QGraphicsPixmapItem*parent=nullptr) : Block(position, asset, game, parent) {
     }
 
     void BackgroundBlock::draw() {
-        QGraphicsRectItem *rect = new QGraphicsRectItem;
-        rect->setRect(std::get<0>(_position), std::get<1>(_position), 10, 10);
-        //addItem(rect);
+        //setPixmap() picture
+        m_Game->getScene()->addItem(this);
+        setVisible(true);
+    }
+    void BackgroundBlock::update(){
+        draw();
     }
 }
+

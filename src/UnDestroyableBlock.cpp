@@ -1,8 +1,8 @@
 #include "UnDestroyableBlock.h"
 
 namespace Bomberman {
-    UnDestroyableBlock::UnDestroyableBlock(std::pair<double, double> position = std::pair<double, double>(1, 0),
-                                           std::string asset = "Blue") : Block(position, asset) {}
+    UnDestroyableBlock::UnDestroyableBlock(std::pair<double, double> position ,
+                                           std::string asset, Game* game, QGraphicsPixmapItem* parent) : Block(position, asset, game, parent) {}
 
     void UnDestroyableBlock::draw() {
 
